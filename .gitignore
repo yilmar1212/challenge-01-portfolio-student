@@ -60,3 +60,4 @@ aws-exports.js
 .idea/
 .vscode/
 *.swp
+!cdk/bin/
