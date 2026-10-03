@@ -61,3 +61,4 @@ aws-exports.js
 .vscode/
 *.swp
 !cdk/bin/
+!cdk/keys/public_key.pem

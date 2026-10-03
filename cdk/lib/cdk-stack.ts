@@ -8,6 +8,9 @@ import * as cloudfront from 'aws-cdk-lib/aws-cloudfront';
 import * as origins from 'aws-cdk-lib/aws-cloudfront-origins';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as cr from 'aws-cdk-lib/custom-resources';
+import * as fs from 'fs';
+
+
 
 export class CdkStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -27,14 +30,31 @@ export class CdkStack extends cdk.Stack {
       removalPolicy: cdk.RemovalPolicy.DESTROY,
     });
 
-    // 3. CloudFront delante del bucket
-    const distribution = new cloudfront.Distribution(this, 'PortfolioDistribution', {
-      defaultRootObject: 'index.html',
-      defaultBehavior: {
-        origin: origins.S3BucketOrigin.withOriginAccessControl(bucket),
-        viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
-      },
+    // 3. CloudFront: público por defecto, firmado en /private/*
+    const publicKey = new cloudfront.PublicKey(this, 'SignerPublicKey', {
+    encodedKey: fs.readFileSync(path.join(__dirname, '../keys/public_key.pem'), 'utf8'),
     });
+    const keyGroup = new cloudfront.KeyGroup(this, 'SignerKeyGroup', {
+    items: [publicKey],
+    });
+
+const s3Origin = origins.S3BucketOrigin.withOriginAccessControl(bucket);
+
+const distribution = new cloudfront.Distribution(this, 'PortfolioDistribution', {
+  defaultRootObject: 'index.html',
+  priceClass: cloudfront.PriceClass.PRICE_CLASS_200,
+  defaultBehavior: {
+    origin: s3Origin,
+    viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+  },
+  additionalBehaviors: {
+    'private/*': {
+      origin: s3Origin,
+      viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+      trustedKeyGroups: [keyGroup],
+    },
+  },
+});
 
     // 4. Subir los archivos de application/ al bucket
     new s3deploy.BucketDeployment(this, 'DeployPortfolio', {
@@ -83,6 +103,9 @@ export class CdkStack extends cdk.Stack {
     // Dominio de CloudFront al terminar el deploy
     new cdk.CfnOutput(this, 'DistributionDomain', {
       value: distribution.distributionDomainName,
+    });
+    new cdk.CfnOutput(this, 'KeyPairId', {
+      value: publicKey.publicKeyId,
     });
   }
 }

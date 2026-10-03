@@ -146,4 +146,11 @@ cdk destroy
 
 ---
 
+
+
+## Documentación
+
+La arquitectura, las decisiones de diseño y las pruebas están en [docs/architecture.md](docs/architecture.md).
+
+
 _AWS Student Builder Group — Universidad del Valle_
