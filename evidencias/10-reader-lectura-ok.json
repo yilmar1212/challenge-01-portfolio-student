@@ -1,0 +1,27 @@
+{
+    "Items": [
+        {
+            "visibility": {
+                "S": "public"
+            },
+            "program": {
+                "S": "Ingeniería de Sistemas"
+            },
+            "url": {
+                "S": "https://d1fb62rkgyqmcr.cloudfront.net/index.html"
+            },
+            "studentId": {
+                "S": "univalle-2026-001"
+            },
+            "studentName": {
+                "S": "Ana Estudiante"
+            },
+            "publishedAt": {
+                "S": "2026-09-19T10:00:00Z"
+            }
+        }
+    ],
+    "Count": 1,
+    "ScannedCount": 1,
+    "ConsumedCapacity": null
+}

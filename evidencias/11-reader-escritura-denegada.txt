@@ -1,0 +1,2 @@
+
+aws: [ERROR]: An error occurred (AccessDeniedException) when calling the PutItem operation: User: arn:aws:sts::060899556584:assumed-role/CdkStack-PortfolioReaderRole589B9044-YzulOMRxbusx/botocore-session-1790986688 is not authorized to perform: dynamodb:PutItem on resource: arn:aws:dynamodb:us-east-2:060899556584:table/CdkStack-PortfoliosTableE0B87F6F-QXTG2CV6LUMX because no identity-based policy allows the dynamodb:PutItem action

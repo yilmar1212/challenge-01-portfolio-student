@@ -1,0 +1,15 @@
+HTTP/2 200 
+content-type: text/html
+content-length: 1435
+server: AmazonS3
+date: Sat, 03 Oct 2026 00:03:08 GMT
+last-modified: Sat, 03 Oct 2026 00:01:15 GMT
+etag: "5f85ca474d9c98124dcb0501d3425717"
+x-amz-server-side-encryption: AES256
+accept-ranges: bytes
+x-cache: Hit from cloudfront
+via: 1.1 afbefb862cbc68ce1a43b2892cbd35d4.cloudfront.net (CloudFront)
+x-amz-cf-pop: MIA50-P7
+x-amz-cf-id: OLlRM-h7KxP-yh5UMHnuyN-ArJNn724jvmp2GC3TzpQ6w7XFva46ew==
+age: 1485
+

@@ -1,0 +1,30 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+|                                                                   ListStackResources                                                                   |
++---------------------------------------+---------------------------------------------------------------------------------------------+------------------+
+|  AWS::Lambda::Function                |  AWS679f53fac002430cb0da5b7982bd22872D164C4C                                                |  CREATE_COMPLETE |
+|  AWS::Logs::LogGroup                  |  AWS679f53fac002430cb0da5b7982bd2287LogGroup449FB7C2                                        |  CREATE_COMPLETE |
+|  AWS::IAM::Role                       |  AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2                                     |  CREATE_COMPLETE |
+|  AWS::CDK::Metadata                   |  CDKMetadata                                                                                |  UPDATE_COMPLETE |
+|  AWS::Lambda::Function                |  CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536                          |  CREATE_COMPLETE |
+|  AWS::Logs::LogGroup                  |  CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CLogGroup817B64E9                  |  CREATE_COMPLETE |
+|  AWS::IAM::Role                       |  CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265               |  CREATE_COMPLETE |
+|  AWS::IAM::Policy                     |  CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF  |  CREATE_COMPLETE |
+|  AWS::Lambda::Function                |  CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F                             |  CREATE_COMPLETE |
+|  AWS::IAM::Role                       |  CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092                                |  CREATE_COMPLETE |
+|  AWS::Lambda::LayerVersion            |  DeployPortfolioAwsCliLayer539EC7DB                                                         |  CREATE_COMPLETE |
+|  Custom::CDKBucketDeployment          |  DeployPortfolioCustomResourceAD232739                                                      |  UPDATE_COMPLETE |
+|  Custom::S3AutoDeleteObjects          |  PortfolioBucketAutoDeleteObjectsCustomResource705DC1C5                                     |  CREATE_COMPLETE |
+|  AWS::S3::Bucket                      |  PortfolioBucketCEAA46CF                                                                    |  CREATE_COMPLETE |
+|  AWS::S3::BucketPolicy                |  PortfolioBucketPolicy66D9AE5F                                                              |  CREATE_COMPLETE |
+|  AWS::CloudFront::Distribution        |  PortfolioDistribution95A7252B                                                              |  UPDATE_COMPLETE |
+|  AWS::CloudFront::OriginAccessControl |  PortfolioDistributionOrigin1S3OriginAccessControl66D1A4B3                                  |  CREATE_COMPLETE |
+|  AWS::IAM::Role                       |  PortfolioReaderRole589B9044                                                                |  CREATE_COMPLETE |
+|  AWS::IAM::Policy                     |  PortfolioReaderRoleDefaultPolicyB51FA9F8                                                   |  CREATE_COMPLETE |
+|  AWS::IAM::Role                       |  PortfolioWriterRole8D1E52F2                                                                |  CREATE_COMPLETE |
+|  AWS::IAM::Policy                     |  PortfolioWriterRoleDefaultPolicyC5B08E80                                                   |  CREATE_COMPLETE |
+|  AWS::DynamoDB::Table                 |  PortfoliosTableE0B87F6F                                                                    |  CREATE_COMPLETE |
+|  Custom::AWS                          |  SeedPortfolioItem5E5EE3CC                                                                  |  CREATE_COMPLETE |
+|  AWS::IAM::Policy                     |  SeedPortfolioItemCustomResourcePolicy814C2FAB                                              |  CREATE_COMPLETE |
+|  AWS::CloudFront::KeyGroup            |  SignerKeyGroup9C10742F                                                                     |  CREATE_COMPLETE |
+|  AWS::CloudFront::PublicKey           |  SignerPublicKeyA1D43FA2                                                                    |  CREATE_COMPLETE |
++---------------------------------------+---------------------------------------------------------------------------------------------+------------------+

@@ -1,0 +1,42 @@
+== PortfolioWriterRole (CdkStack-PortfolioWriterRole8D1E52F2-QvEjNTAzXTaJ) ==
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "s3:Abort*",
+                "s3:DeleteObject*",
+                "s3:PutObject",
+                "s3:PutObjectLegalHold",
+                "s3:PutObjectRetention",
+                "s3:PutObjectTagging",
+                "s3:PutObjectVersionTagging"
+            ],
+            "Resource": [
+                "arn:aws:s3:::cdkstack-portfoliobucketceaa46cf-3xf3nfitiyce",
+                "arn:aws:s3:::cdkstack-portfoliobucketceaa46cf-3xf3nfitiyce/*"
+            ],
+            "Effect": "Allow"
+        }
+    ]
+}
+== PortfolioReaderRole (CdkStack-PortfolioReaderRole589B9044-YzulOMRxbusx) ==
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "dynamodb:BatchGetItem",
+                "dynamodb:ConditionCheckItem",
+                "dynamodb:DescribeTable",
+                "dynamodb:GetItem",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator",
+                "dynamodb:Query",
+                "dynamodb:Scan"
+            ],
+            "Resource": "arn:aws:dynamodb:us-east-2:060899556584:table/CdkStack-PortfoliosTableE0B87F6F-QXTG2CV6LUMX",
+            "Effect": "Allow"
+        }
+    ]
+}
