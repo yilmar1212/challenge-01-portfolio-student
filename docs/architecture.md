@@ -77,6 +77,8 @@ Un solo `cdk deploy` crea el bucket, la distribución, la tabla, los roles, **su
 | 4 | `GET /private/secreto.html` sin firma | `403`, respondido por CloudFront. |
 | 5 | `GET /private/secreto.html` con URL firmada | `200`. |
 | 6 | `GET /` público después de agregar lo privado | Sigue en `200`: no se rompió lo existente. |
+| 7 | Lectura con `PortfolioReaderRole` (`dynamodb:Scan`) | Funciona: devuelve el ítem de prueba. |
+| 8 | Escritura con `PortfolioReaderRole` (`dynamodb:PutItem`) | `AccessDeniedException`: el rol lector no tiene permiso de escritura (mínimo privilegio). |
 
 ---
 
